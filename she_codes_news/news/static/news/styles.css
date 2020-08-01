@@ -85,14 +85,28 @@
     width: 50%;
 }
 
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    align-content: space-around;
+}
+
 form {
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
     justify-content:stretch;
     float: top;
-    width: 80em;
+
+
   }
+
+form p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 input,
 textarea {
@@ -104,8 +118,7 @@ textarea {
   background: #48586c;
   transition: all 0.2s ease;
   color: white;
-  justify-content: stretch;
-
+  width: 88%;
 }
 
 input[type="submit"] {
@@ -113,8 +126,12 @@ input[type="submit"] {
   border: 1px solid #639fabff;
   box-shadow: inset 0px 1px 0px #c191a1ff, 0px 4px 0px #fdfffcff;
   width: 10em;
-}
+  display: flex;
+  flex-direction: column;
+  align-self: center
+    
 
+}
 
 input:focus,
 textarea:focus {
