@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Create Account</h2>
+<div class="title">
+<h2>Register to start posting your stories!</h2>
+</div>
 <form method="post">
 {% csrf_token %}
 {{ form.as_p }}

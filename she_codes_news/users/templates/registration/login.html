@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h2>Login</h2>
+<div class="title"><h2>Stop! You must log in before you can post!</h2></div>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}

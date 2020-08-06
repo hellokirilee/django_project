@@ -1,7 +1,8 @@
 .story-card {
     margin: 2px;
-    border: 1px solid #000;
+    border: 1px solid #22223b;
     padding: 5px;
+    background-color: #f2e9e4;
 }
 
 .story-card img {
@@ -111,20 +112,20 @@ form p {
 input,
 textarea {
   font-size: 1em;
-  box-shadow: inset 0px 1px 1px #fdfffcff, 0px 1px 1px #c191a1ff;
+  box-shadow: inset 0px 1px 1px #f2e9e4, 0px 1px 1px #9a8c98;
   border-radius: 2px;
   padding: .25em;
   border: 1px solid #fdfffcff;
-  background: #48586c;
+  background: #4a4e69;
   transition: all 0.2s ease;
   color: white;
   width: 88%;
 }
 
 input[type="submit"] {
-  background: pink;
-  border: 1px solid #639fabff;
-  box-shadow: inset 0px 1px 0px #c191a1ff, 0px 4px 0px #fdfffcff;
+  background: #c9ada7;
+  border: 1px solid #22223b;
+  box-shadow: inset 0px 1px 0px #4a4e69, 0px 4px 0px #f2e9e4;
   width: 10em;
   display: flex;
   flex-direction: column;
@@ -135,8 +136,8 @@ input[type="submit"] {
 
 input:focus,
 textarea:focus {
-  box-shadow: 0px 0px 5px #fdfffcff;
-  border: 1px solid fdfffcff;
+  box-shadow: 0px 0px 5px #f2e9e4;
+  border: 1px solid 4a4e69;
   background: c191a1ff;
 }
 
@@ -144,5 +145,14 @@ label {
   display: block;
   font-size: 14px;
   letter-spacing: 1px;
-  text-shadow: 0px 2px 1px c191a1ff;
+  text-shadow: 0px 2px 1px 4a4e69;
+
+}
+
+
+#create-story {
+    display: flex;
+    text-align: center;
+    margin-top: 5em;
+    justify-content: center;
 }
