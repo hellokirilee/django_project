@@ -1,22 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Pacifico&display=swap');
 
 * {
-color: #22223b;
+color: black;
+font-family: 'montserrat';
 }   
 body {
-    background-color: #9a8c98;
+    background-color: #ffffff;
 
 }
 header {
     display: flex;
-    align-items: flex-start;
-    width: 100vw;
-    justify-content: space-between;
+    overflow: hidden;
     position: fixed;
-    border-bottom: 1px solid #22223b;
-    background-color: #c9ada7;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid #326273;
+    background-color: #EEEEEE;
     top: 0px;
     left: 0px;
+    z-index: 2;
 }
 
 .title {
@@ -25,18 +29,45 @@ header {
 }
 
 img {
-    filter: brightness()(100%);
+    filter: grayscale();
+    z-index: 1;
 }
+
+
+img:hover {
+    filter: grayscale(0%);
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s;
+  
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
 
 h1 {
     font-family: 'Pacifico';
-    text-decoration: none;
     font-size: 4rem;
     margin: 0;
+    color: #e39774;
+    float: left;
 }
 
 h2 {
-   font-family: 'Montserrat Subrayada', sans-serif; 
+   font-family: 'Pacifico'; 
+   color: #5c9ead
 }
 
 h3 {
@@ -50,20 +81,26 @@ h3 {
 }
 
 nav {
-    flex-basis: 20%;
     display: flex;
     flex-direction: column;
-    margin-right: 3em;
-    padding-top: .75em;
-    align-items: flex-end;
+    justify-self: right;
+    margin: 2em;
+
 }
 
-a {
-    margin: 2px;
+
+nav, a {
+    float: right;
     text-decoration: none;
-    color: #000;
+    color: #326273;   
+
+}
+
+a:hover {
+    color: #e39774
 }
 
 a, p {
-    font-family: monospace;
+    font-family: 'montserrat';
+    color: black;
 }

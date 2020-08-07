@@ -1,8 +1,8 @@
 .story-card {
     margin: 2px;
-    border: 1px solid #22223b;
+    border: 1px solid #326273;
     padding: 5px;
-    background-color: #f2e9e4;
+    background-color: #EEEEEE;
 }
 
 .story-card img {
@@ -22,6 +22,8 @@
 
 #story-card-1 {
     grid-area: left-1;
+    display: flex;
+    justify-content: space-around;
 }
 
 #story-card-2 {
@@ -34,7 +36,10 @@
 
 #story-card-4 {
     grid-area: right-3;
+    display: flex;
+    justify-content: space-around;
 }
+
 
 #story-card-2 a,
 #story-card-3 a,
@@ -108,24 +113,24 @@ form p {
     flex-direction: column;
     align-items: center;
 }
-
+/* Highlighting select area - making it darker and easier to read input text */
 input,
 textarea {
   font-size: 1em;
-  box-shadow: inset 0px 1px 1px #f2e9e4, 0px 1px 1px #9a8c98;
+  box-shadow: inset 0px 1px 1px #EEEEEE, 0px 1px 1px #ffffff;
   border-radius: 2px;
   padding: .25em;
-  border: 1px solid #fdfffcff;
-  background: #4a4e69;
+  border: 1px solid #EEEEEE;
+  background: #5c9ead;
   transition: all 0.2s ease;
-  color: white;
+  color: #ffffff;
   width: 88%;
 }
 
 input[type="submit"] {
-  background: #c9ada7;
-  border: 1px solid #22223b;
-  box-shadow: inset 0px 1px 0px #4a4e69, 0px 4px 0px #f2e9e4;
+  background: #e39774;
+  border: 1px solid #f2e9e4;
+  box-shadow: inset 0px 1px 0px #f2e9e4, 0px 4px 0px #EEEEEE;
   width: 10em;
   display: flex;
   flex-direction: column;
@@ -134,25 +139,26 @@ input[type="submit"] {
 
 }
 
+
 input:focus,
 textarea:focus {
-  box-shadow: 0px 0px 5px #f2e9e4;
-  border: 1px solid 4a4e69;
-  background: c191a1ff;
+  box-shadow: 0px 0px 5px #EEEEEE;
+  border: 1px solid #f2e9e4;
+  background: #326273;
 }
 
 label {
   display: block;
   font-size: 14px;
   letter-spacing: 1px;
-  text-shadow: 0px 2px 1px 4a4e69;
+  text-shadow: 0px 2px 1px #f2e9e4;
 
 }
 
-
+/* Heading to allow space for Nav bar */
 #create-story {
     display: flex;
     text-align: center;
-    margin-top: 5em;
+    margin-top: 5.5em;
     justify-content: center;
 }
