@@ -1,6 +1,6 @@
 from django.views import generic
 from django.urls import reverse_lazy
-from .models import NewsCategory, NewsStory
+from .models import NewsStory, NewsCategory
 from .forms import StoryForm
 
 class IndexView(generic.ListView):
@@ -17,19 +17,21 @@ class IndexView(generic.ListView):
         return context
 
 class Category_View(generic.ListView):
+    context_object_name = "story"
     template_name = "news/storyCategory.html"
+
 
     def get_queryset(self):
         '''Return all news stories.'''
         #I added to get NewsCategory.objects.all() to try and get the PK? 
         #Do I need to join the tables here?
-        return NewsStory.objects.all(), NewsCategory.objects.all()
+        return NewsStory.objects.filter('category')
 
-    def get_queryset(self):
-        filter = self.request.GET.get("category")
-        print("filter: ", filter)
-        if filter:
-            return NewsStory.objects.filter()
+    # def get_queryset(self):
+    #     filter = self.request.GET.get("category")
+    #     print("filter: ", filter)
+    #     if filter:
+    #         return NewsStory.objects.filter()
             
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
