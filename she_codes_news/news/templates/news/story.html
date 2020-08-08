@@ -8,6 +8,8 @@
 <div id="story-wrapper">
     <div class="title"><h2>{{ story.title }}</h2></div>
     <h4>A great story by: {{ story.author }}</h4>
+    <!-- CSS needs to be updated for space on Category -->
+    <h4>Category: <a href="{% url 'news:storyCategory' story.category.id%}">{{ story.category }}</a></h4>
     <div id="story-content">
         <img src = "{{ story.image_url }}">
         {{ story.content|linebreaks }}
