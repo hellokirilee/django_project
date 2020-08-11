@@ -13,18 +13,19 @@ Consider Forms
 """
 
 class NewsCategory (models.Model):
+#Categories have been defined with their name as pk.
+#Duplicates will now be alloed, and SuperUsers can add additional Categories behind the by logging in.
     category = models.CharField(max_length=50, unique=True, primary_key=True)
     
 
-#this gives a meaningful name in Admin section    
-    def __str__(self):
-        return self.category
+
     
 class NewsStory(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey(
         get_user_model(),
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name = "stories"
     )
     pub_date = models.DateTimeField()
     content = models.TextField()
@@ -37,7 +38,8 @@ class NewsStory(models.Model):
         null = True
     )
 
-    #returns meaningful description in Admin interface
-    def __str__(self):
-        return str(self.title) + " - " + str(self.category)
+    #returns meaningful description when called
+    # def __str__(self):
+    #     return str(self.title) + " - " + str(self.category)
+
 

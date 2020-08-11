@@ -9,7 +9,7 @@
 <div class="title">
 </div>
  <div id="all-stories">
-   {% for story in category_name.stories.all %}
+   {% for story in author_stories.stories.all %}
       {% include "./storyCard.html" with story=story %}
    {% endfor %}
  </div>

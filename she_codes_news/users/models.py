@@ -3,7 +3,9 @@ from django.db import models
 
 # Create your models here.
 class CustomUser(AbstractUser):
-    pass #this is where I'd put my own fields - __str__ shows how this will display in the Admin page
+    pass #this is where custom fields could be added
 
+    
+    #this gives a meaningful name in User model name, viewed in the story view & Admin section
     def __str__(self):
-        return self.username
+        return str(self.first_name) + " " + str(self.last_name)

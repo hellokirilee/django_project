@@ -7,12 +7,17 @@
 
 <div id="story-wrapper">
     <div class="title"><h2>{{ story.title }}</h2></div>
-    <h4>A great story by: {{ story.author }}</h4>
-    <!-- CSS needs to be updated for space on Category -->
-    <h4>Category: <a href="{% url 'news:storyCategory' story.category.pk %}">{{ story.category }}</a></h4>
+        <!-- CSS needs to be updated for space on Author -->
+
+    {% comment %} <div class="author"><h4>Story by: <a href="{% url 'news:storyAuthor' story.author.pk %}">{{ story.author }}</a></h4></div> {% endcomment %}
+
+    <em>Published: {{ story.pub_date }}</em>
     <div id="story-content">
         <img src = "{{ story.image_url }}">
         {{ story.content|linebreaks }}
+    </div>
+    
+    <div><h4>See more stories about<a href="{% url 'news:storyCategory' story.category.pk %}">{{ story.category }}</a></h4>
     </div>
 </div>
 {% endblock %}

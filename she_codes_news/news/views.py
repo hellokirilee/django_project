@@ -1,7 +1,9 @@
 from django.views import generic
+from django.views.generic import DetailView
 from django.urls import reverse_lazy
 from .models import NewsStory, NewsCategory
 from .forms import StoryForm
+from django.shortcuts import render
 
 class IndexView(generic.ListView):
     template_name = 'news/index.html'
@@ -16,30 +18,22 @@ class IndexView(generic.ListView):
         context['all_stories'] = NewsStory.objects.order_by('-pub_date')[4:]
         return context
 
-class Category_View(generic.ListView):
-    context_object_name = "story"
-    template_name = "news/storyCategory.html"
+# not working
+# class StoriesbyAuthor(generic.DetailView):
+#     template_name = 'news/storyAuthor.html'
+#     model = NewsStory
+#     context_object_name = 'storyby'
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['author_stories'] = NewsStory.objects.filter(author=self.object).order_by('-pub_date')
+#         return context
 
-
-    def get_queryset(self):
-        '''Return all news stories.'''
-        #I added to get NewsCategory.objects.all() to try and get the PK? 
-        #Do I need to join the tables here?
-        return NewsStory.objects.filter('category')
-
-    # def get_queryset(self):
-    #     filter = self.request.GET.get("category")
-    #     print("filter: ", filter)
-    #     if filter:
-    #         return NewsStory.objects.filter()
-            
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['latest_stories'] = NewsStory.objects.order_by('-pub_date')[:4]
-        context['all_stories'] = NewsStory.objects.order_by('-pub_date')[4:]
-        return context
-
-
+class CategoryView(generic.DetailView):
+    #This view returns all stories, but allows for filtering by the NewsCategory Class
+    model = NewsCategory
+    template_name = 'news/storyCategory.html'
+    context_object_name = 'category_name'
+    
 class StoryView(generic.DetailView):
     model = NewsStory
     template_name = "news/story.html"
@@ -54,3 +48,4 @@ class AddStoryView(generic.CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
