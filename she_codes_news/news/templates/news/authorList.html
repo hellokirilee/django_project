@@ -3,11 +3,11 @@
 Need to figure out slug before trying to update{% endcomment %}
 {% block content %}
 
-<div class="title">Categories:</div>
+<div class="title">Authors:</div>
  
  <div>
-        {% for category in all_categories %}
-            <a href="{% url 'news:storyCategory' category.pk %}">{{ category }}</a></h4>
+        {% for author in all_authors %}
+            <a href="{% url 'news:storyAuthor' story.author.username %}">{{ story.author.first_name }}</a>
 
    {% endfor %}
 

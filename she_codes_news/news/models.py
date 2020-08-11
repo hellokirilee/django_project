@@ -31,7 +31,7 @@ class NewsStory(models.Model):
         on_delete=models.CASCADE,
         related_name = "stories"
     )
-    pub_date = models.DateTimeField()
+    pub_date = models.DateField()
     content = models.TextField()
     image_url = models.URLField(max_length = 200)
     category = models.ForeignKey(
