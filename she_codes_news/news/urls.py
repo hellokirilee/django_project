@@ -20,5 +20,5 @@ urlpatterns = [
     #list of stories by authors - to be called by card instead?
     path('author/', views.NewsListView.as_view(), name='authorList'),
     
-    path('story/<int:pk>/edit/', views.EditStory, name='editStory'),
+    # path('story/<int:pk>/edit/', views.EditStory, name='editStory'),
 ]

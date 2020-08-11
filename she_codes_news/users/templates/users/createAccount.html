@@ -1,6 +1,11 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+{% load static %}
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}"> 
+{% endblock %}
 
 {% block content %}
+<div id ="wrapper">
 <div class="title">
 <h2>Register to start posting your stories!</h2>
 </div>
@@ -9,4 +14,5 @@
 {{ form.as_p }}
 <button type="submit">Create Account</button>
 </form>
+</div>
 {% endblock %}

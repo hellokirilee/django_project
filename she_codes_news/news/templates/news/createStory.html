@@ -3,7 +3,7 @@
 {% block stylesheets %}
 <link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}"> 
 {% endblock %}
-
+{% comment %} Need to work on formatting of login button {% endcomment %}
 {% block content%}
 
 <div id ="wrapper">
@@ -16,7 +16,8 @@
     {{ form.as_p }}
     <input type="submit" value="submit">
     {% else %}
-    <a href="{% url 'login' %}">Login</a>
+    <br>
+    <div class="title"><h2><a href="{% url 'login' %}">Login</a></h4></div>
     {% endif %}
 </form>
 </div>

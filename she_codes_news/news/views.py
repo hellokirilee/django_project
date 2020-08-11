@@ -40,18 +40,19 @@ class AddStoryView(generic.CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+        
 
 
-"""View to edit post"""
-class EditStory(generic.UpdateView):
-    form_class = StoryForm
-    context_object_name = 'storyForm'
-    template_name = 'news/createStory.html'
-    success_url = reverse_lazy('news:index')
+# """View to edit post"""
+# class EditStory(generic.UpdateView):
+#     form_class = StoryForm
+#     context_object_name = 'storyForm'
+#     template_name = 'news/createStory.html'
+#     success_url = reverse_lazy('news:index')
 
-    def form_valid(self, form):
-        form.instance.author = self.request.user
-        return super().form_valid(form)
+#     def form_valid(self, form):
+#         form.instance.author = self.request.user
+#         return super().form_valid(form)
 
 
 
@@ -83,8 +84,3 @@ class NewsListView(ListView):
         context['all_categories'] = NewsCategory.objects.order_by('category')
         context['all_authors'] = User.objects.order_by('last_name')
         return context
-
-
-    
-
-
