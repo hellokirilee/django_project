@@ -1,9 +1,14 @@
+from django.contrib.auth import get_user_model
 from django.views import generic
 from django.views.generic import DetailView
 from django.urls import reverse_lazy
 from .models import NewsStory, NewsCategory
 from .forms import StoryForm
 from django.shortcuts import render
+
+
+User = get_user_model()
+
 
 class IndexView(generic.ListView):
     template_name = 'news/index.html'
@@ -18,15 +23,11 @@ class IndexView(generic.ListView):
         context['all_stories'] = NewsStory.objects.order_by('-pub_date')[4:]
         return context
 
-# not working
-# class StoriesbyAuthor(generic.DetailView):
-#     template_name = 'news/storyAuthor.html'
-#     model = NewsStory
-#     context_object_name = 'storyby'
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context['author_stories'] = NewsStory.objects.filter(author=self.object).order_by('-pub_date')
-#         return context
+
+class StoriesbyAuthor(generic.DetailView):
+    template_name = 'news/storyAuthor.html'
+    model = User
+    context_object_name = 'author'
 
 class CategoryView(generic.DetailView):
     #This view returns all stories, but allows for filtering by the NewsCategory Class
