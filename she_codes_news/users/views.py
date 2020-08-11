@@ -6,7 +6,7 @@ from .models import CustomUser
 from .forms import CustomUserCreationForm
 from django.contrib.auth import get_user_model
 
-# Create your views here.
+# Create your views here - looking to update this with edit account only
 class CreateAccountView(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')

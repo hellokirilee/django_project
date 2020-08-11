@@ -116,9 +116,15 @@ TIME_ZONE = 'Australia/Perth'
 
 USE_I18N = True
 
-USE_L10N = True
+USE_L10N = False
 
 USE_TZ = True
+""" 
+Date format - 
+for date format to work correctly, USE_L10N, must be set ot false.
+e.g. for format below setting should display as 'Tuesday 11 August 2020'
+"""
+DATE_FORMAT = "l j F Y"
 
 
 # Static files (CSS, JavaScript, Images)

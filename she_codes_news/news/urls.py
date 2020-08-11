@@ -11,14 +11,16 @@ urlpatterns = [
     path('story/<int:pk>/', views.StoryView.as_view(), name='story'),
     #form to add a new story
     path('add-story/', views.AddStoryView.as_view(), name ='newStory'),
-    #stories grouped by category
+    #stories grouped by category considering value in page with list of
+    #categories over something like StoryCard
     path('category/<str:pk>/', views.CategoryView.as_view(), name='storyCategory'),
     #stories grouped by author
+    #to be considered, an author profile page
     path('author/<str:slug>/', views.StoriesbyAuthor.as_view(), name='storyAuthor'),
     #list of story categories - to be called by card maybe??
     path('category/', views.NewsListView.as_view(), name='categoryList'),
     #list of stories by authors - to be called by card instead?
     path('author/', views.NewsListView.as_view(), name='authorList'),
-    
+    #not working
     # path('story/<int:pk>/edit/', views.EditStory, name='editStory'),
 ]
