@@ -17,10 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    # path('', include('news.urls')),
-    #works for now - but maybe look into redirect
-    path('news/', include('news.urls')),
+    #news is the main app, so the blank url will take people straight there
+    path('', include('news.urls')),
+    #admin site set to default config
     path('admin/', admin.site.urls),
+    #will allow users urls & django config
     path('users/', include('users.urls')),
     path('users/', include('django.contrib.auth.urls')),
 

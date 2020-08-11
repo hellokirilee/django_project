@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}"> 
+{% endblock %}
+
+{% block content%}
+
+<div id ="wrapper">
+
+{% if user.is_authenticated %}
+{% comment %} <form action="" method="post"> {% endcomment %}
+    <div id = "user_page">
+    <h2>Tell us your story!</h2></div>
+    {% csrf_token %}
+    {% comment %} {{ form.as_p }}
+    <input type="submit" value="submit"> {% endcomment %}
+    {% else %}
+    <p>Login to see your profile</p>
+    {% comment %} I would like this to be a button? {% endcomment %}
+    <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+</form>
+</div>
+{% endblock %}
+

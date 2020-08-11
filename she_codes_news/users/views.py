@@ -1,9 +1,10 @@
 from django.urls import reverse_lazy
-from django.views.generic.edit import CreateView
 from django.views import generic
+from django.views.generic.edit import CreateView
+#confirm if needed
 from .models import CustomUser
 from .forms import CustomUserCreationForm
-
+from django.contrib.auth import get_user_model
 
 # Create your views here.
 class CreateAccountView(CreateView):

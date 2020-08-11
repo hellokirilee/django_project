@@ -16,6 +16,10 @@ class NewsCategory (models.Model):
 #Categories have been defined with their name as pk.
 #Duplicates will now be alloed, and SuperUsers can add additional Categories behind the by logging in.
     category = models.CharField(max_length=50, unique=True, primary_key=True)
+
+        # returns meaningful description when called
+    def __str__(self):
+        return self.category
     
 
 

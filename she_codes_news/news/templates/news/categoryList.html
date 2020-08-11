@@ -1,0 +1,15 @@
+
+{% comment %}Will consider adding/inserting this as a page{% endcomment %}
+{% block content %}
+
+<div class="title">Categories:</div>
+ 
+ <div>
+        {% for category in all_categories %}
+            <a href="{% url 'news:storyCategory' category.pk %}">{{ category }}</a></h4>
+
+   {% endfor %}
+
+ </div>
+{% endblock %}
+
