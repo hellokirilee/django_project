@@ -8,7 +8,7 @@
 
 <div id ="wrapper">
 
-{% if user.is_authenticated %}
+{% if user.is_authenticated and story.author == user %}
 <form action="" method="post">
     <div id = "create-story">
     <h2>Change your story!</h2></div>
@@ -16,7 +16,7 @@
     {{ form.as.p }}
     <input type="submit" value="Save Changes">
     {% else %}
-    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'login' %}">Only the author can make changes to a story</a>
     {% endif %}
 </form>
 </div>

@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from . import views
 from django.views.generic.detail import DetailView
 
+
 app_name = 'news'
 
 urlpatterns = [

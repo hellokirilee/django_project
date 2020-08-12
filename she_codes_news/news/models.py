@@ -35,7 +35,8 @@ class NewsStory(models.Model):
     """
     author = models.ForeignKey(
         get_user_model(),
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name = "stories"
     )
     pub_date = models.DateField(verbose_name = 'Date Publised')
     content = models.TextField()
@@ -46,7 +47,7 @@ class NewsStory(models.Model):
         related_name = "stories",
         # Can allow null for existing data - but require it on form.
         null = True,
-        verbose_name = 'self.category',
+        verbose_name = 'Category',
 
     )
     """verbose name & verbose plural name act as display names, 
@@ -55,5 +56,4 @@ class NewsStory(models.Model):
     class Meta:
         verbose_name = 'Story'
         verbose_name_plural = 'Stories'
-        
 

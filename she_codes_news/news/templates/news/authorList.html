@@ -8,6 +8,7 @@ Need to figure out slug before trying to update{% endcomment %}
  <div>
         {% for author in all_authors %}
             <a href="{% url 'news:storyAuthor' story.author.username %}">{{ story.author.first_name }}</a>
+            
 
    {% endfor %}
 

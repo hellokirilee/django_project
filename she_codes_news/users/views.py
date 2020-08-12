@@ -3,8 +3,10 @@ from django.views import generic
 from django.views.generic.edit import CreateView
 #confirm if needed
 from .models import CustomUser
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, CustomUserChangeForm
 from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 # Create your views here - looking to update this with edit account only
 class CreateAccountView(CreateView):
@@ -14,13 +16,14 @@ class CreateAccountView(CreateView):
 
 
 
-# class UpdateAccountView(generic.UpdateView):
-#     form_class = CustomChangeForm
-#     template_name = 'users/updateAccount.html'
-#     context_object_name = 'User'
-#     #change to view of profile later?
-#     success_url = reverse_lazy('news:index')
+class UpdateAccountView(generic.UpdateView):
+    model = User
+    form_class = CustomUserChangeForm
+    template_name = 'users/updateAccount.html'
+    context_object_name = 'User'
+    #change to view of profile later?
+    success_url = reverse_lazy('news:index')
     
-#     def form_valid(self, form):
-#         form.instance.user = self.request.user
-#         return super().form_valid(form) 
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form) 

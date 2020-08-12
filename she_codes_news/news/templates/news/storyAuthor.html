@@ -5,11 +5,14 @@
 {% endblock %}
 #It is important to start a new block here
 {% block content %}
+
 <div class="title">
 </div>
  <div id="all-stories">
-   {% for story in author.stories.all %}
+   {% for story in author_name.stories.all %}
+      {{ story.title }}
       {% include "./storyCard.html" with story=story %}
    {% endfor %}
  </div>
 {% endblock %}
+
