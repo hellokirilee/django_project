@@ -2,6 +2,11 @@ from django import forms
 from django.forms import ModelForm
 from .models import NewsStory
 
+"""
+Story form configued to allow front-end upload & updates of NewsStory
+To be developed - editing and deleting interface.
+"""
+
 class StoryForm(ModelForm):
     class Meta:
         model = NewsStory

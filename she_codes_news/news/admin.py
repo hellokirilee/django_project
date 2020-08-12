@@ -17,5 +17,7 @@ class NewsAdmin(admin.ModelAdmin):
     ]
 
 
+
+
 admin.site.register(NewsStory, NewsAdmin)
 admin.site.register(NewsCategory)

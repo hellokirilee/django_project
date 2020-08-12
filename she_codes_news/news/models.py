@@ -23,6 +23,9 @@ class NewsCategory (models.Model):
         verbose_name = 'Category'
         verbose_name_plural = 'Categories'
 
+    def __str__(self):
+        return self.category
+
 
     
 class NewsStory(models.Model):
@@ -32,8 +35,7 @@ class NewsStory(models.Model):
     """
     author = models.ForeignKey(
         get_user_model(),
-        on_delete=models.CASCADE,
-        related_name = "stories"
+        on_delete=models.CASCADE
     )
     pub_date = models.DateField(verbose_name = 'Date Publised')
     content = models.TextField()
@@ -43,7 +45,9 @@ class NewsStory(models.Model):
         on_delete = models.CASCADE,
         related_name = "stories",
         # Can allow null for existing data - but require it on form.
-        null = True
+        null = True,
+        verbose_name = 'self.category',
+
     )
     """verbose name & verbose plural name act as display names, 
     providing formatting when called by forms, or in the admin center 
@@ -51,11 +55,5 @@ class NewsStory(models.Model):
     class Meta:
         verbose_name = 'Story'
         verbose_name_plural = 'Stories'
+        
 
-    """ 
-    This sets the default field when the NewsStory is called.
-    Currently set to just title - but alternatiely, can be set to return a string
-    of self.title " "+" " self.category
-    """
-    def __str__(self):
-          return self.title

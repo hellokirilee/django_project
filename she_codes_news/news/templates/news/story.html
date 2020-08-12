@@ -9,7 +9,7 @@
     <div class="title"><h2>{{ story.title }}</h2></div>
         <!-- CSS needs to be updated for space on Author -->
 
-    <div class="author"><h4>Story by: <a href="{% url 'news:storyAuthor' story.author.pk %}">{{ story.author }}</a></h4></div>
+    <div class="author"><h4>Story by: <a href="{% url 'news:storyAuthor' story.author.username %}">{{ story.author }}</a></h4></div>
 
     <em>Published: {{ story.pub_date }}</em>
     <div id="story-content">

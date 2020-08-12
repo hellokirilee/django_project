@@ -11,3 +11,16 @@ class CreateAccountView(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')
     template_name = 'users/createAccount.html'
+
+
+
+# class UpdateAccountView(generic.UpdateView):
+#     form_class = CustomChangeForm
+#     template_name = 'users/updateAccount.html'
+#     context_object_name = 'User'
+#     #change to view of profile later?
+#     success_url = reverse_lazy('news:index')
+    
+#     def form_valid(self, form):
+#         form.instance.user = self.request.user
+#         return super().form_valid(form) 

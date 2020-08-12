@@ -43,24 +43,24 @@ class AddStoryView(generic.CreateView):
         
 
 
-# """View to edit post"""
-# class EditStory(generic.UpdateView):
-#     form_class = StoryForm
-#     context_object_name = 'storyForm'
-#     template_name = 'news/createStory.html'
-#     success_url = reverse_lazy('news:index')
+"""View to edit post"""
+class EditStory(generic.UpdateView):
+    form_class = StoryForm
+    context_object_name = 'storyForm'
+    template_name = 'news/createStory.html'
+    success_url = reverse_lazy('news:index')
 
-#     def form_valid(self, form):
-#         form.instance.author = self.request.user
-#         return super().form_valid(form)
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
-
+"""Context Object name is used to call in templates"""
 
 class StoriesbyAuthor(generic.DetailView):
     template_name = 'news/storyAuthor.html'
     model = User
     context_object_name = 'author'
-    slug_field = "Uusername"
+    # slug_field = "username"
     #set slug here #then change url to use string #change all url code in templates to use 
 
 class CategoryView(generic.DetailView):
