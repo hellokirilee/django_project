@@ -136,4 +136,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 
 )
+
+#Sending emails not yet configured, this allows for emails generated (password reset)
+#To show in console
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
