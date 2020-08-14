@@ -3,9 +3,13 @@
 {% block content %}
 
 <div class="title"><h2>Stop! You must log in before you can post!</h2></div>
+<div class = "login">
+<img class = "decoration" src = "https://images.unsplash.com/photo-1572641433465-b7d5e07f7d3c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">
+
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type ="submit">Login</button>
+</div>
 </form>
 {% endblock %}

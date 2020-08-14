@@ -6,9 +6,28 @@
 #It is important to start a new block here
 {% block content %}
 
+
+
 <div class="title">
+<h2> Stories about {{ category_name }} </h2>
 </div>
+
  <div id="all-stories">
+    <div id = "ad-card">
+    <a href = "https://www.cathaven.com.au/">
+    <img src = "https://images.unsplash.com/photo-1596789866050-b7d8cf68c636?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">
+        <div class="story-card-text">
+            <h3>Pls give money</h3>
+            <h4>We will write more stories about {{ category_name }}</h4>
+            <p>Pooping rainbow while flying in a toasted bread costume in space cat gets stuck in tree firefighters try to get cat down firefighters get stuck in tree cat eats firefighters' slippers and make plans to dominate world and then take a nap the fat cat sat on the mat bat away with paws lick butt. Hiss and stare at nothing then run suddenly away sit in window and stare oooh, a bird, yum and get video posted to internet for chasing red dot and try to hold own back foot to clean it but foot reflexively kicks you in face, </p>
+            <strong>
+            <h4>#donate</h4>
+            </strong>
+    </div>
+    </a>
+    </div>
+
+<br>
    {% for story in category_name.stories.all %}
       {% include "./largeStoryCard.html" with story=story %}
       

@@ -3,7 +3,7 @@ from django.views import generic
 from django.views.generic import DetailView, UpdateView, ListView, CreateView  
 from django.urls import reverse_lazy
 from .models import NewsStory, NewsCategory
-from .forms import StoryForm, EditStoryForm
+from .forms import StoryForm
 from django.shortcuts import get_object_or_404, render
 from django.contrib.auth.mixins import UserPassesTestMixin
 
@@ -21,7 +21,7 @@ class IndexView(generic.ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['latest_stories'] = NewsStory.objects.order_by('-pub_date')[:4]
-        context['all_stories'] = NewsStory.objects.order_by('-pub_date')[4:7]
+        context['all_stories'] = NewsStory.objects.order_by('-pub_date')[4:6]
     
         return context
 
@@ -45,29 +45,29 @@ class AddStoryView(generic.CreateView):
         
 
 
-"""View to edit post"""
-class EditStory(generic.UpdateView):
-    form_class = EditStoryForm
-    model = NewsStory
-    context_object_name = 'storyForm'
-    template_name = 'news/editStory.html'
-    success_url = reverse_lazy('news:index')
+# """View to edit post"""
+# class EditStory(generic.UpdateView):
+#     form_class = EditStoryForm
+#     model = NewsStory
+#     context_object_name = 'storyForm'
+#     template_name = 'news/editStory.html'
+#     success_url = reverse_lazy('news:index')
 
-    # def form_valid(self, form):
-    #     author=self.request.user
-    #     form.instance.author = self.request.user
-    #     return super().form_valid(form)
-    # return False
+#     # def form_valid(self, form):
+#     #     author=self.request.user
+#     #     form.instance.author = self.request.user
+#     #     return super().form_valid(form)
+#     # return False
 
-    def is_author(self,user):
-        author = self.request.user
-    def form_valid(self, form):
-        form.instance.author = self.request.user
-        return super().form_valid(form)
-    def test_func(self):
-            story = self.get_object()
-            if self.request.user == story.author:
-                return True
+#     def is_author(self,user):
+#         author = self.request.user
+#     def form_valid(self, form):
+#         form.instance.author = self.request.user
+#         return super().form_valid(form)
+#     def test_func(self):
+#             story = self.get_object()
+#             if self.request.user == story.author:
+#                 return True
 
         
 

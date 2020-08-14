@@ -9,7 +9,23 @@
 <div class="title">
 <h2> Stories by {{ author_name }} </h2>
 </div>
+
  <div id="all-stories">
+    <div id = "ad-card">
+    <a href = "https://www.cathaven.com.au/">
+    <img src = "https://images.pexels.com/photos/127027/pexels-photo-127027.jpeg?cs=srgb&dl=pexels-vadim-b-127027.jpg&fm=jpg">
+        <div class="story-card-text">
+            <h3>Being a cat is hard</h3>
+            <h4>We write stories for you - pls give monies</h4>
+            <p>Pooping rainbow while flying in a toasted bread costume in space cat gets stuck in tree firefighters try to get cat down firefighters get stuck in tree cat eats firefighters' slippers and make plans to dominate world and then take a nap the fat cat sat on the mat bat away with paws lick butt. Hiss and stare at nothing then run suddenly away sit in window and stare oooh, a bird, yum and get video posted to internet for chasing red dot and try to hold own back foot to clean it but foot reflexively kicks you in face, </p>
+            <strong>
+            <h4>#donate</h4>
+            </strong>
+    </div>
+    </a>
+    </div>
+
+<br>
    {% for story in author_name.stories.all %}
       {% include "./largeStoryCard.html" with story=story %}
    {% endfor %}

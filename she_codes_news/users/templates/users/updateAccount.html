@@ -7,16 +7,19 @@
 {% block content %}
 <div id ="wrapper">
 <div class="title">
-{% if form_valid %}
 <h2>Update your details!</h2>
 </div>
+
 <form method="post">
+{% if form_valid %}
 {% csrf_token %}
 {{ form.as_p }}
-<button type="submit">Create Account</button>
+<button type="submit">Update Account</button>
 </form>
-    {% else %}
-        <div id = "title"><h4>No updates for you</h4></div>
-      {% endif %}
 </div>
+{% endif %}
+<h2>No updates for you! but you can create an account?</h2>
 {% endblock %}
+
+
+

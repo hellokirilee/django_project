@@ -11,6 +11,7 @@
     object-fit: cover;
 }
 
+
 #latest-stories {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -85,11 +86,96 @@
     text-align: justify;
 }
 
-#story-content img {
+#story-content img{
     float: right;
     margin: 0 0 10px 10px;
     width: 50%;
 }
+
+
+#ad {
+    width: 33%;
+    height: 100%;
+    margin-right: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-basis: 32%;
+    flex-grow: 1;
+    margin: 2px;
+    border: 1px solid #326273;
+    padding: 5px;
+    background-color: #E39774;
+    align-content: space-between;
+    flex-basis: 32%;
+    flex-grow: 1;
+}
+
+
+#ad a, #ad-card a {
+    display: flex;
+
+}
+
+
+
+#ad img {
+    width: 50%;
+    height: 350px;
+    object-fit: cover;
+    filter: none;
+    margin-right: 1em;
+
+}
+
+#ad-card img {
+    margin: 0 0 10px 10px;
+    width: 50%;
+    filter: none;
+    margin-right: 1em;
+}
+
+#ad-card {
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    flex-basis: 32%;
+    flex-grow: 1;
+    margin: 2px;
+    border: 1px solid #326273;
+    padding: 5px;
+    background-color: #E39774;
+    flex-basis: 32%;
+    flex-grow: 1;
+    justify-content: space-around;
+}
+
+
+#ad img:hover, #ad-card:hover {
+    filter: grayscale(100%);
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s;
+  
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+
+
 
 #wrapper {
     display: flex;
@@ -99,65 +185,23 @@
     align-content: space-around;
 }
 
-.div #see-category a {
+#see-link {
     float: left;
 }
 
-form {
+#story-header {
+    display: inline-block
+}
+
+#author {
     display: flex;
-    flex-direction: column;
-    justify-content:stretch;
-    float: top;
-
-
-  }
-
-form p {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-/* Highlighting select area - making it darker and easier to read input text */
-input,
-textarea {
-  font-size: 1em;
-  box-shadow: inset 0px 1px 1px #EEEEEE, 0px 1px 1px #ffffff;
-  border-radius: 2px;
-  padding: .25em;
-  border: 1px solid #EEEEEE;
-  background: #5c9ead;
-  transition: all 0.2s ease;
-  color: #ffffff;
-  width: 88%;
-}
-
-input[type="submit"] {
-  background: #e39774;
-  border: 1px solid #f2e9e4;
-  box-shadow: inset 0px 1px 0px #f2e9e4, 0px 4px 0px #EEEEEE;
-  width: 10em;
-  display: flex;
-  flex-direction: column;
-  align-self: center
-    
-
+    align-items: flex-start;
+    text-justify: initial;
+    justify-items: start;
+    float: left;
 }
 
 
-input:focus,
-textarea:focus {
-  box-shadow: 0px 0px 5px #EEEEEE;
-  border: 1px solid #f2e9e4;
-  background: #326273;
-}
-
-label {
-  display: block;
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-shadow: 0px 2px 1px #f2e9e4;
-
-}
 
 /* Heading to allow space for Nav bar */
 #create-story {
@@ -166,3 +210,13 @@ label {
     margin-top: 5.5em;
     justify-content: center;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .title h2{
+      padding-top: 10px;
+      margin-top: 0px
+    }
+
+
+  }

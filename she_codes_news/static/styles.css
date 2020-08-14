@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Pacifico&display=swap');
 
+
+/* Note - additional styles are located in the News App */
 * {
 color: black;
 font-family: 'montserrat';
+font-size: 14px;
 }   
 body {
     background-color: #ffffff;
@@ -24,9 +27,12 @@ header {
 }
 
 .title {
-    padding-top: 6em;
+    padding-top: 5.5em;
 
 }
+
+
+
 
 img {
     filter: grayscale();
@@ -59,7 +65,7 @@ img:hover {
 
 h1 {
     font-family: 'Pacifico';
-    font-size: 4rem;
+    font-size: 4em;
     margin: 0;
     color: #e39774;
     float: left;
@@ -67,6 +73,7 @@ h1 {
 
 h2 {
    font-family: 'Pacifico'; 
+   font-size: 2.5em;
    color: #5c9ead
 }
 
@@ -104,3 +111,106 @@ a, p {
     font-family: 'montserrat';
     color: black;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+
+  }
+
+form p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Highlighting select area - making it darker and easier to read input text */
+input,
+textarea {
+  font-size: 1em;
+  box-shadow: inset 0px 1px 1px #EEEEEE, 0px 1px 1px #ffffff;
+  border-radius: 2px;
+  padding: .25em;
+  border: 1px solid #EEEEEE;
+  background: #5c9ead;
+  transition: all 0.2s ease;
+  color: #ffffff;
+  width: 88%;
+}
+
+input[type="submit"], button {
+  background: #e39774;
+  border: 1px solid #f2e9e4;
+  box-shadow: inset 0px 1px 0px #f2e9e4, 0px 4px 0px #EEEEEE;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+    
+
+}
+
+
+
+input:focus,
+textarea:focus {
+  box-shadow: 0px 0px 5px #EEEEEE;
+  border: 1px solid #f2e9e4;
+  background: #326273;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-shadow: 0px 2px 1px #f2e9e4;
+
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  font-size: 1em;
+  border-radius: 2px;
+  padding: .25em;
+  border: 1px solid #5C9EAD;
+  background: #5c9ead;
+  transition: all 0.2s ease;
+  color: #326273;
+  width: 75%;
+  align-self: center;
+
+  background: #EEEEEE;
+  padding: 30px;
+  margin: 30px;
+}
+
+.login {
+  display: inline-flex;
+
+
+
+  align-items: center;
+
+}
+
+.decoration {
+  display: flex;
+  max-width: 45%;
+  justify-self: center;
+  align-self: center;
+}
+
+
+@media only screen and (max-width: 500px) {
+    .title h2{
+      padding: 10px;
+      margin-top: 0px
+    }
+
+  .login {
+    display: flex;
+    flex-direction: column;
+  }
+
+  }
+

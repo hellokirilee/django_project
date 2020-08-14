@@ -14,12 +14,12 @@ class CreateAccountView(CreateView):
     success_url = reverse_lazy('login')
     template_name = 'users/createAccount.html'
 
-
-
 class UpdateAccountView(generic.UpdateView):
     model = User
     form_class = CustomUserChangeForm
     template_name = 'users/updateAccount.html'
+    slug_field = "username"
+    #set slug here #then change url to use string #change all url code in templates to use 
     context_object_name = 'User'
     #change to view of profile later?
     success_url = reverse_lazy('news:index')
