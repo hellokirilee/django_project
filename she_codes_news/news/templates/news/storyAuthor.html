@@ -7,11 +7,11 @@
 {% block content %}
 
 <div class="title">
+<h2> Stories by {{ author_name }} </h2>
 </div>
  <div id="all-stories">
    {% for story in author_name.stories.all %}
-      {{ story.title }}
-      {% include "./storyCard.html" with story=story %}
+      {% include "./largeStoryCard.html" with story=story %}
    {% endfor %}
  </div>
 {% endblock %}
