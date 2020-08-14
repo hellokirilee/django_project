@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}"> 
+{% endblock %}
+
+{% block content %}
+<div id ="wrapper">
+<div class="title">
+{% if form_valid %}
+<h2>Update your details!</h2>
+</div>
+<form method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<button type="submit">Create Account</button>
+</form>
+    {% else %}
+        <div id = "title"><h4>No updates for you</h4></div>
+      {% endif %}
+</div>
+{% endblock %}

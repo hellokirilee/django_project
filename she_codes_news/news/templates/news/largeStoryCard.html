@@ -1,0 +1,13 @@
+<div class="story-card" id="story-card-{{ position }}">
+    <a href="{% url 'news:story' story.id%}">
+
+            <img src = "{{ story.image_url }}">
+        
+        <div class="story-card-text">
+            <h3>{{ story.title|truncatechars:35 }} ...</h3>
+            <h4>{{ story.author }}</h4>
+            <h4>{{ story.pub_date }}</h4>
+            <p>{{story.content|truncatechars:150 }} ...</p>
+        </div>
+    </a>
+</div>

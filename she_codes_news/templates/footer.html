@@ -1,0 +1,14 @@
+<div id = "categories">
+
+</div>
+
+<div id = "authors">
+    {% for author in all_authors %}
+     <a href="{% url 'news:storyAuthor' story.author.username %}"> {{ author.full_name }}</a>
+   {% endfor %}
+</div>
+    <h4>
+    {% for category in all_categories %}
+        <a href="{% url 'news:storyCategory' category.pk %}">{{ category }}</a></h4>
+
+   {% endfor %}
