@@ -17,7 +17,7 @@
         {{ story.content|linebreaks }}
     </div>
     
-    <div><h4>See more stories about<a href="{% url 'news:storyCategory' story.category.pk %}">{{ story.category }}</a></h4>
+    <div id = "see-category"><h4>See more stories about<a href="{% url 'news:storyCategory' story.category.pk %}">{{ story.category }}</a></h4>
     </div>
 </div>
 {% endblock %}

@@ -99,6 +99,10 @@
     align-content: space-around;
 }
 
+.div #see-category a {
+    float: left;
+}
+
 form {
     display: flex;
     flex-direction: column;
